@@ -1,0 +1,8 @@
+filepath, filename, description
+name.basics.tsv.gz, name basics, information about human beings
+title.akas.tsv.gz, title akas, alternative title and information
+title.basics.tsv.gz, title basics, primary title and information
+title.crew.tsv.gz, title crew, crew information
+title.episode.tsv.gz, title episode, episode information
+title.principals.tsv.gz, title principals, actor information
+title.ratings.tsv.gz, title ratings, overall rating information
