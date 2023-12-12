@@ -12,7 +12,7 @@ drop table if exists Ratings;
 drop table if exists Basics;
 
 CREATE TABLE Akas (
-	titleId TEXT PRIMARY KEY, -- a tconst, an alphanumeric unique identifier of the title
+	tconst TEXT PRIMARY KEY, -- a tconst, an alphanumeric unique identifier of the title
 	ordering INTEGER, -- a number to uniquely identify rows for a given titleId
 	title TEXT, -- the localized title
 	region TEXT, -- the region for this version of the title
