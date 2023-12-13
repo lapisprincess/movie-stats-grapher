@@ -1,0 +1,8 @@
+filepath, filename, description
+name.basics.tsv, name basics, information about people
+title.basics.tsv, title basics, primary title and information
+title.akas.tsv, Akas, alternative title and information
+title.principals.tsv, Principals, actor information
+#title.crew.tsv, Crew, crew information
+title.episode.tsv, Episode, episode information
+title.ratings.tsv, Ratings, overall rating information
