@@ -1,6 +1,14 @@
-# Import the os and sys modules
-import sys
 import sqlite3
+
+'''
+This is the script used to load all of the tsv files from IMDB's website into IMDB_database.db. 
+It takes each line of each tsv, and inserts it into the database line by line.
+Columns representing attributes that are arrays are omitted.
+
+IMDB_database_lite.db is a smaller version of the original database.
+@author Branson Jones
+@version 12/13/2023
+'''
 
 connection = sqlite3.connect("IMDB_database.db")
 crsr = connection.cursor()
