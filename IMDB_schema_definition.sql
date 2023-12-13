@@ -12,8 +12,8 @@ drop table if exists Ratings;
 drop table if exists Basics;
 
 CREATE TABLE Akas (
-	titleId TEXT PRIMARY KEY, -- a tconst, an alphanumeric unique identifier of the title
-	ordering INTEGER, -- a number to uniquely identify rows for a given titleId
+	tconst TEXT PRIMARY KEY, -- a tconst, an alphanumeric unique identifier of the title
+	ordering INTEGER, -- a number to uniquely identify rows for a given tconst
 	title TEXT, -- the localized title
 	region TEXT, -- the region for this version of the title
 	language TEXT, -- the language of the title
@@ -41,7 +41,7 @@ CREATE TABLE Title_Basics (
 	endYear INTEGER, -- (YYYY) TV Series end year. ‘\N’ for all other title types
 	runtimeMinutes INTEGER, -- primary runtime of the title, in minutes
 	-- OMITTED: genres (string array)
-	FOREIGN KEY(tconst) REFERENCES Akas(titleId)
+	FOREIGN KEY(tconst) REFERENCES Akas(tconst)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
 );
@@ -53,7 +53,7 @@ CREATE TABLE Episode (
 	parentTconst TEXT, -- alphanumeric identifier of the parent TV Series
 	seasonNumber INTEGER, -- season number the episode belongs to
 	episodeNumber INTEGER, -- episode number of the tconst in the TV series
-	FOREIGN KEY(tconst) REFERENCES Akas(titleId)
+	FOREIGN KEY(tconst) REFERENCES Akas(tconst)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
 	
@@ -66,7 +66,7 @@ CREATE TABLE Principals (
 	category TEXT, -- the category of job that person was in
 	job TEXT, -- the specific job title if applicable, else '\N'
 	characters TEXT, -- the name of the character played if applicable, else '\N'
-	FOREIGN KEY(tconst) REFERENCES Akas(titleId)
+	FOREIGN KEY(tconst) REFERENCES Akas(tconst)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE,
 	FOREIGN KEY(nconst) REFERENCES Basics(nconst)
@@ -78,7 +78,7 @@ CREATE TABLE Ratings (
 	tconst TEXT PRIMARY KEY, -- alphanumeric unique identifier of the title
 	averageRating REAL, -- weighted average of all the individual user ratings
 	numVotes INTEGER, -- number of votes the title has received
-	FOREIGN KEY(tconst) REFERENCES Akas(titleId)
+	FOREIGN KEY(tconst) REFERENCES Akas(tconst)
 		ON UPDATE CASCADE
 		ON DELETE CASCADE
 );
