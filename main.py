@@ -69,12 +69,12 @@ def main():
         tableA = input("First relation: ")
         tableB = input("Second relation: ")
         print("Attributes in " + tableA + ":")
-        attributesA = open(tableA + ".tsv", 'r').readline().split("\t")
+        attributesA = open(tableA + ".tsv", 'r', encoding="utf-8").readline().split("\t")
         attributesA[len(attributesA)-1] = attributesA[len(attributesA)-1][:-2]
         print(attributesA)
         print()
         print("Attributes in " + tableB + ":")
-        attributesB = open(tableB + ".tsv", 'r').readline().split("\t")
+        attributesB = open(tableB + ".tsv", 'r', encoding="utf-8").readline().split("\t")
         print(attributesB)
         print()
         common = False
